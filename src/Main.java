@@ -1,7 +1,7 @@
 import java.io.OptionalDataException;
 
 public class Main {
-
+    //Базовая сложность
     public static void main(String[] args) {
         Employee[] employees = new Employee[10];
 
@@ -15,30 +15,30 @@ public class Main {
         employees[7] = new Employee("Бухтин А.С.", 2, 100_000);
         employees[8] = new Employee("Смускин С.В.", 5, 80_756);
         employees[9] = new Employee("Житников А.С.", 5, 87_777);
-
+        //Получить список всех сотрудников со всеми имеющимися по ним данными
+        // (вывести в консоль значения всех полей (toString))
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i]);
         }
-        int sum = getSum(employees);
 
+        //Посчитать СУММУ затрат на ЗП в месяц
+        int sum = getSum(employees);
         System.out.println("Сумма зарплат сотрудников = " + sum);
 
+        //Найти сотрудника с МИНимальной ЗП
         int min = minSalary(employees);
-
         System.out.println("Минимальная зарпалата сотрудника = " +min);
 
+        //Найти сотрудника с МАКсимальной ЗП
         int max = maxSalary(employees);
-
         System.out.println("Максимальная зарплата сотрудника = " + max);
-
+        //Подсчитать среднее значение зарплат (можно использовать для этого метод из пункта b)
         float averageSalary = sum / employees.length;
-
         System.out.println("Средняя заработная плата = " + averageSalary);
-
+        //Распечатать ФИО всех сотрудников
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i].getName());
         }
-
     }
 
     public static int getSum(Employee[] employees) {
@@ -47,7 +47,6 @@ public class Main {
             sum += employees[i].getSalary();
         }
         return sum;
-
     }
 
     public static int minSalary(Employee[] employees) {
@@ -67,8 +66,5 @@ public class Main {
             }
         }
         return max;
-    }
-    public void printName () {
-
     }
 }
